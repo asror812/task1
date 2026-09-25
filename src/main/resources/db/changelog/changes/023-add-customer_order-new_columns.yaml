@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: asror
+      changes:
+        - addColumn:
+            tableName: customer_order
+            columns:
+              - column:
+                  name: delivery_city
+                  type: varchar
+              - column:
+                  name: delivery_address
+                  type: varchar
+              - column:
+                  name: delivery_date
+                  type: timestamptz

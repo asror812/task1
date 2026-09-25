@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: asror
+      changes:
+        - loadData:
+            tableName: warehouse
+            file: demo-data/warehouse.csv
+            separator: ','
+            relativeToChangelogFile: false
+            columns:
+              - column:
+                  header: "id"
+                  name: id
+                  type: numeric
+              - column:
+                  header: "created_at"
+                  name: created_at
+                  type: timestamptz
+              - column:
+                  header: "updated_at"
+                  name: updated_at
+                  type: timestamptz
+              - column:
+                  header: "deleted"
+                  name: deleted
+                  type: boolean
+
+              - column:
+                  header: "name"
+                  name: name
+                  type: varchar
+
+              - column:
+                  header: "address"
+                  name: address
+                  type: varchar
+              - column:
+                  header: active
+                  name: active
+                  type: boolean

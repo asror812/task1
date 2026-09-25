@@ -1,0 +1,11 @@
+id,created_at,updated_at,deleted,name,sku,description,active,supplier_id,category_id
+1,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Samsung Galaxy A55 128GB,SAM-A55-128,"Android smartphone, 128 GB storage",true,1,1
+2,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Lenovo IdeaPad Slim 5 16,LEN-SLIM5-16,"16-inch laptop, 16 GB RAM",true,1,2
+3,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,A4 Copy Paper 500 Sheets,OFF-A4-500,80 gsm white office paper,true,2,3
+4,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Electric Kettle 1.7L,HOME-KETTLE-17,Stainless steel electric kettle,true,4,4
+5,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Ergonomic Office Chair,FURN-CHAIR-ERG,Adjustable desk chair with lumbar support,true,5,5
+6,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Wi-Fi 6 Router AX1800,NET-AX1800,Dual-band wireless router,true,6,6
+7,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Portable SSD 1TB,STOR-SSD-1TB,USB-C portable solid-state drive,true,7,7
+8,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Wireless Headphones,AUD-HEAD-BT,Over-ear Bluetooth headphones,false,8,8
+9,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,USB-C Charger 65W,ELEC-CHARGE-65,Compact USB-C laptop charger,true,3,1
+10,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Ballpoint Pens 10 Pack,OFF-PEN-10,Blue ink ballpoint pens,true,2,3

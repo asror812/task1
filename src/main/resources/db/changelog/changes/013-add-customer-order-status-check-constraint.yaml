@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: asror
+      changes:
+        - sql:
+            dbms: postgresql
+            sql: ALTER TABLE CUSTOMER_ORDER ADD CONSTRAINT chk_status_enum
+              CHECK (status IN ('NEW', 'PAID', 'PROCESSING', 'SHIPPED', 'CANCELLED'))

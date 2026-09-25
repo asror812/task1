@@ -1,0 +1,8 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: asror
+      changes:
+        - sql:
+            dbms: postgresql
+            sql: ALTER TABLE stock ADD CONSTRAINT chk_positive_reserved_quantity CHECK (reserved_quantity >= 0);

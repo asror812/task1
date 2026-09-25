@@ -1,0 +1,9 @@
+id,created_at,updated_at,deleted,name,address,active
+1,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Tashkent Central Warehouse,"Chilonzor district, Tashkent",true
+2,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Yunusobod Fulfillment Center,"Yunusobod district, Tashkent",true
+3,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Samarkand Regional Warehouse,"Siyob district, Samarkand",true
+4,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Fergana Distribution Point,"Fergana city, Fergana region",true
+5,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Bukhara Warehouse,"Bukhara city, Bukhara region",true
+6,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Andijan Storage Hub,"Andijan city, Andijan region",true
+7,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Navoi Transit Warehouse,"Navoi city, Navoi region",false
+8,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Karshi Regional Warehouse,"Karshi city, Qashqadaryo region",true

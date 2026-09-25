@@ -1,0 +1,9 @@
+id,created_at,updated_at,deleted,name,phone,email
+1,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Tashkent Digital Supply,+998900000101,sales@tashkent-digital.example.com
+2,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Samarkand Office Trade,+998900000102,orders@samarkand-office.example.com
+3,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Nova Electronics Distribution,+998900000103,hello@nova-electronics.example.com
+4,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Fergana Home Market,+998900000104,sales@fergana-home.example.com
+5,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Central Asia Furniture,+998900000105,info@central-furniture.example.com
+6,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,UzNet Equipment,+998900000106,orders@uznet-equipment.example.com
+7,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Silk Road Storage,+998900000107,sales@silkroad-storage.example.com
+8,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Bukhara Audio House,+998900000108,contact@bukhara-audio.example.com

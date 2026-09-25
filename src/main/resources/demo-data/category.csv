@@ -1,0 +1,9 @@
+id,created_at,updated_at,deleted,name,description
+1,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Electronics,"Phones, tablets, and accessories"
+2,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Computers,Laptops and desktop accessories
+3,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Office Supplies,Everyday stationery and office essentials
+4,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Home Appliances,Appliances for home and kitchen
+5,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Furniture,Office and home furniture
+6,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Networking,Routers and connectivity equipment
+7,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Storage,Data storage devices
+8,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Audio,Headphones and speakers

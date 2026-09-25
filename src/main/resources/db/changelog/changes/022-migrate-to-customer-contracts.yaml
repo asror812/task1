@@ -1,0 +1,67 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: asror
+      changes:
+        - createTable:
+            tableName: supplier_contracts
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: created_at
+                  type: timestamptz
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: timestamptz
+                  constraints:
+                    nullable: false
+              - column:
+                  name: deleted
+                  type: boolean
+
+              - column:
+                  name: supplier_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_supplier_contracts_supplier
+                    references: supplier(id)
+              - column:
+                  name: contact_name
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: phone
+                  type: varchar
+              - column:
+                  name: email
+                  type: varchar
+                  constraints:
+                    unique: true
+              - column:
+                  name: is_primary
+                  type: boolean
+                  defaultValueBoolean: false
+
+
+  - changeSet:
+      id: 2
+      author: asror
+      changes:
+        - sql:
+            dbms: postgresql
+            sql:
+              INSERT INTO supplier_contracts 
+              (created_at, updated_at, deleted, supplier_id, contact_name, phone, email, is_primary)
+              SELECT created_at, updated_at, deleted, id, name, phone, email, TRUE 
+              FROM supplier
+              WHERE phone IS NOT NULL
+              and btrim(phone) <> '';

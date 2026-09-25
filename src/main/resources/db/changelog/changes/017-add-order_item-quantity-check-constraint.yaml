@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: asror
+      changes:
+        - sql:
+            dbms: postgresql
+            sql: ALTER TABLE order_item ADD CONSTRAINT chk_positive_quantity
+              CHECK (quantity > 0);

@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: asror
+      changes:
+        - addUniqueConstraint:
+            tableName: stock
+            columnNames: product_id, warehouse_id
+            constraintName: uq_stock_warehouse_product

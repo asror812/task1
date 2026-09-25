@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: asror
+      changes:
+        - renameColumn:
+            tableName: order_item
+            oldColumnName: unitPrice
+            newColumnName: unit_price
+            columnDataType: numeric(19,2)

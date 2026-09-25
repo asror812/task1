@@ -1,0 +1,8 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: asror
+      changes:
+        - sql:
+            sql: ALTER TABLE customer_order ADD CONSTRAINT chk_positive_total_amount 
+              CHECK (total_amount > 0);

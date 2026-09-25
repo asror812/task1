@@ -1,0 +1,60 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: asror
+      preConditions:
+        - onFail: HALT
+        - tableExists:
+            tableName: customer_order
+        - not:
+            - tableExists:
+                tableName: order_status_history
+
+      changes:
+        - createTable:
+            tableName: order_status_history
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: created_at
+                  type: timestamptz
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: timestamptz
+                  constraints:
+                    nullable: false
+              - column:
+                  name: deleted
+                  type: boolean
+                  defaultValueBoolean: false
+
+              - column:
+                  name: order_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_order_status_history_customer_order
+                    references: customer_order(id)
+              - column:
+                  name: old_status
+                  type: varchar(50)
+              - column:
+                  name: new_status
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: changed_at
+                  type: timestamptz
+                  constraints:
+                    nullable: false
+              - column:
+                  name: changed_by
+                  type: bigint

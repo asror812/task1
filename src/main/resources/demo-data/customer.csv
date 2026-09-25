@@ -1,0 +1,9 @@
+id,created_at,updated_at,deleted,full_name,email,phone
+1,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Aziz Karimov,aziz.karimov@example.com,+998900000201
+2,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Malika Tursunova,malika.tursunova@example.com,+998900000202
+3,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Javohir Rakhimov,javohir.rakhimov@example.com,+998900000203
+4,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Dilnoza Abdullayeva,dilnoza.abdullayeva@example.com,+998900000204
+5,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Sardor Ismoilov,sardor.ismoilov@example.com,+998900000205
+6,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Madina Yusupova,madina.yusupova@example.com,+998900000206
+7,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Bobur Usmonov,bobur.usmonov@example.com,+998900000207
+8,2026-09-01T09:00:00Z,2026-09-20T12:00:00Z,false,Sevara Akhmedova,sevara.akhmedova@example.com,+998900000208

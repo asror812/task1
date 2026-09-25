@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: asror
+      changes:
+        - loadData:
+            tableName: customer
+            file: demo-data/customer.csv
+            separator: ','
+            relativeToChangelogFile: false
+            columns:
+              - column:
+                  header: id
+                  name: id
+                  type: numeric
+              - column:
+                  header: created_at
+                  name: created_at
+                  type: timestamptz
+              - column:
+                  header: updated_at
+                  name: updated_at
+                  type: timestamptz
+              - column:
+                  header: deleted
+                  name: deleted
+                  type: boolean
+
+              - column:
+                  header: email
+                  name: email
+                  type: varchar
+              - column:
+                  header: phone
+                  name: phone
+                  type: varchar
+              - column:
+                  header: full_name
+                  name: full_name
+                  type: varchar
+

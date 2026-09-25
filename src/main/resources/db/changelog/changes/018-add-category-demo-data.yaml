@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: asror
+      changes:
+        - loadData:
+            tableName: category
+            file: demo-data/category.csv
+            separator: ','
+            relativeToChangelogFile: false
+            columns:
+              - column:
+                  header: "id"
+                  name: id
+                  type: numeric
+              - column:
+                  header: "updated_at"
+                  name: updated_at
+                  type: timestamptz
+              - column:
+                  header: "created_at"
+                  name: created_at
+                  type: timestamptz
+              - column:
+                  header: "deleted"
+                  name: deleted
+                  type: boolean
+
+              - column:
+                  header: "name"
+                  name: name
+                  type: varchar
+              - column:
+                  header: "description"
+                  name: description
+                  type: text

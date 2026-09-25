@@ -1,0 +1,8 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: asror
+      changes:
+        - sql:
+            sql: ALTER TABLE order_item ADD CONSTRAINT chk_correct_discount
+              CHECK (discount >= 0 AND discount <= 100);
