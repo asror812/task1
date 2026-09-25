@@ -1,0 +1,109 @@
+Этап 1. Стартовая структура БД
+Создай отдельные Liquibase changelog-файлы и подключи их из master changelog.
+Сущности:
+Supplier
+Category
+Product
+Warehouse
+Stock
+Customer
+CustomerOrder
+OrderItem
+Обязательные таблицы и поля:
+Таблица	Ключевые поля
+supplier	id, name, phone, email, created_at
+category	id, name, description
+product	id, name, sku, price, active, supplier_id, category_id, created_at
+warehouse	id, name, address, active
+stock	id, product_id, warehouse_id, quantity, reserved_quantity, updated_at
+customer	id, full_name, email, phone, created_at
+customer_order	id, order_number, customer_id, warehouse_id, status, total_amount, created_at
+order_item	id, order_id, product_id, quantity, unit_price, discount
+Все таблицы должны иметь primary key id.
+
+
+Этап 2. Ограничения и качество данных
+Добавь ограничения:
+product.sku — уникальный и обязательный.
+product.price >= 0.
+stock.quantity >= 0.
+stock.reserved_quantity >= 0.
+stock.reserved_quantity <= stock.quantity.
+Одна запись остатков на пару (product_id, warehouse_id).
+customer.email — уникальный.
+customer_order.order_number — уникальный.
+order_item.quantity > 0.
+order_item.unit_price >= 0.
+order_item.discount — от 0 до 100.
+customer_order.status может быть только: NEW, PAID, PROCESSING, SHIPPED, CANCELLED.
+Добавь foreign keys. Подумай, где уместен CASCADE, а где лучше запретить удаление.
+
+
+Этап 3. Индексы
+Создай индексы для частых сценариев:
+поиск продукта по sku;
+поиск продукта по названию;
+список товаров поставщика;
+остатки конкретного склада;
+заказы клиента;
+заказы по статусу и дате;
+позиции конкретного заказа.
+После этого напиши SQL-запросы, которые используют эти индексы, и проверь через:
+EXPLAIN ANALYZE
+
+
+Этап 4. Начальные данные
+Сделай отдельный changelog для тестовых данных:
+5 категорий;
+5 поставщиков;
+3 склада;
+30 товаров;
+остатки каждого товара хотя бы на одном складе;
+10 клиентов;
+20 заказов в разных статусах;
+у каждого заказа 1–5 позиций.
+Не используй только ручные INSERT в одном огромном файле. Попробуй Liquibase loadData с CSV хотя бы для категорий, поставщиков или товаров.
+
+
+Этап 5. Реальная миграция схемы
+Представь, что первая версия уже находится в production. Теперь бизнес просит изменения.
+Сделай их новыми миграциями, не редактируя старые changeset:
+У поставщика вместо одного phone должна быть таблица supplier_contact:
+id, supplier_id, contact_name, phone, email, is_primary.
+Перенеси старые телефоны из supplier.phone в новую таблицу.
+Затем удали колонку supplier.phone.
+
+Добавь в заказ адрес доставки:
+delivery_city;
+delivery_address;
+delivery_date.
+
+Добавь аудит изменений заказа:
+таблица order_status_history;
+id, order_id, old_status, new_status, changed_at, changed_by.
+
+Введи soft delete для продуктов:
+deleted;
+deleted_at;
+не удаляй товары физически.
+
+
+Этап 6. Preconditions и rollback
+Минимум в трёх changeset используй preConditions, например:
+таблица или колонка должна существовать;
+index не должен существовать;
+миграция должна выполняться только в PostgreSQL.
+Для каждой структурной миграции добавь rollback.
+Примеры проверок после rollback:
+новая колонка исчезает;
+index удаляется;
+созданная таблица удаляется;
+данные из миграции контактов восстанавливаются или явно документируется, почему автоматический rollback небезопасен.
+
+
+Этап 7. Contexts
+Раздели данные по контекстам:
+dev — демо-данные;
+test — минимальные данные для тестов;
+prod — только структура, без демо-данных.
+Проверь, что запуск без dev не добавляет тестовых пользователей, заказов и товаров.
