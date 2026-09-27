@@ -30,5 +30,8 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: http://localhost:8080/realms/order-management
+          audiences:
+            - order-management-api
+
 server:
   port: 8081

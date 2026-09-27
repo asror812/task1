@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      id: 026-add-customer-keycloak-user-id
+      author: asror
+
+      preConditions:
+        - onFail: HALT
+        - not:
+            - columnExists:
+                tableName: customer
+                columnName: keycloak_user_id
+
+      changes:
+        - addColumn:
+            tableName: customer
+            columns:
+              - column:
+                  name: keycloak_user_id
+                  type: varchar(255)
+
+        - addUniqueConstraint:
+            tableName: customer
+            columnNames: keycloak_user_id
+            constraintName: uk_customer_keycloak_user_id
+
+      rollback:
+        - dropUniqueConstraint:
+            tableName: customer
+            constraintName: uk_customer_keycloak_user_id
+
+        - dropColumn:
+            tableName: customer
+            columnName: keycloak_user_id
