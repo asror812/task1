@@ -31,6 +31,4 @@ public class OrderController {
     public ResponseEntity<List<OrderResponseDto>> getMyOrders(@AuthenticationPrincipal Jwt jwt) {
         return ResponseEntity.ok(orderService.getOwn(jwt));
     }
-
-
 }
